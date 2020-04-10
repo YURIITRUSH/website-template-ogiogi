@@ -1,0 +1,12 @@
+-
+	var defaultService = {
+		icon: 'joystick',
+		title: "default title",
+		descr: 'default descr'
+	}
+mixin service(arguments = defaultService)
+	.service
+		.service--icon
+			.icon(class='icon-'+arguments.icon)
+		.service--title #{arguments.title}
+		.service--descr #{arguments.descr}

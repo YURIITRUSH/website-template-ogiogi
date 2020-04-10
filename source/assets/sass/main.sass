@@ -1,0 +1,219 @@
+@import 'reset', 'vars', 'mixins', 'base', 'grid', 'typography', 'icons'
+.service
+	&--icon
+		margin-bottom: 21px
+	&--title
+		@include fslh(20, 26)
+		margin-bottom: 15px
+		font-family: Montserrat, sans-sertif
+	&--descr
+		letter-spacing: 0.5px
+		@include fslh(15, 26)
+.section
+	position: relative
+	padding-top: 140px
+	padding-bottom: 70px
+	&_dark
+		color: #fff
+		background: #141720
+		.content-text
+			padding-right: 30px
+	&_hiring
+		.row
+			flex-direction: row-reverse
+		.content-text
+			padding-right: 0
+			padding-left: 30px
+			@include respond-to(xlarge)
+				padding-left: 100px
+		.bg-image-wrap
+			background-image: url('../img/hiring.png')
+	&_gray
+		background: #EFEFEF
+	&--title
+		text-align: center
+		font-family: Montserrat, sans-sertif
+		letter-spacing: 1px
+		color: #2B2B2B
+		@include fslh(28,26)
+		margin-bottom: 80px
+	.bg-image-wrap
+		@include respond-to(desktop)
+			margin-top: -140px
+			margin-bottom: -70px
+.timeline
+	display: inline-flex
+	@include respond-to(desktop)
+		height: 100%
+		flex-direction: column
+	&--wrap
+		overflow-x: auto
+		@include respond-to(desktop)
+			overflow: unset
+			height: 100%
+	font-weight: bold
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		top: 50%
+		left: 0
+		right: 0
+		height: 4px
+		margin-top: -2px
+		background: #D4D4D4
+		@include respond-to(desktop)
+			top: -138px
+			bottom: 10px
+			right: auto
+			width: 4px
+			height: auto
+			left: 85px
+	@include fslh(16,26)
+	&--point
+		display: flex
+		align-items: center
+		white-space: nowrap
+		margin: 0 $gap/2
+		position: relative
+		z-index: 1
+		background: #fff
+		cursor: pointer
+		@include respond-to(desktop)
+			background: none
+			margin-bottom: 50px
+			&:last-child
+				margin-top: auto
+				margin-bottom: 0
+		padding: 0 10px
+		&.is-active
+			.timeline--date
+				color: #C71222
+			.timeline--circle
+				border-color: #C71222
+	&--circle
+		border-radius: 50%
+		border: 4px solid #D4D4D4
+		width: 16px
+		height: 16px
+		margin: 0 15px
+		background: #fff
+.bg-image-wrap
+	background-image: url(../img/about.png)
+	background-size: cover
+	background-color: red
+	width: 100%
+	padding-top: 100%
+	position: relative
+.bg-image-inner
+	position: absolute
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+.header
+	padding: 30px 0
+	position: fixed
+	left: 0
+	top: 0
+	width: 100%
+	background: #fff
+	z-index: 10
+.logo
+	@include fslh(24, 26)
+	font-weight: bold
+.row-header
+	justify-content: space-between
+	align-items: center
+.navbar
+	position: relative
+.menu
+	position: absolute
+	z-index: 5
+	top: -300px
+	background: #fff
+	right: 0
+	padding: 15px 25px 20px
+	margin-top: 35px
+	transition: .5s ease top
+	&.is-opened
+		top: 100%
+	li
+		margin: 5px 0
+	ul
+		list-style: none
+	a
+		text-decoration: none
+		@include fslh(16, 22)
+		letter-spacing: 0.5px
+		color: #5D5F65
+.burger
+	height: 20px
+	width: 34px
+	display: inline-flex
+	flex-direction: column
+	justify-content: space-between
+	cursor: pointer
+	span
+		height: 10%
+		background: #5D5F65
+.slide
+	height: 100vh
+	padding: 100px 0
+	display: flex
+	flex-direction: column
+	text-align: center
+	&--title
+		margin-top: auto
+		@include fslh(24, 34)
+		@include respond-to(tablet)
+				@include fslh(44, 54)
+		font-weight: bold
+		margin-bottom: 16px
+		color: #141720
+	&--slogan
+		@include fslh(25, 60)
+		color: #5D5F65
+		margin-bottom: auto
+.slick-arrow
+	position: absolute
+	top: 50%
+	transform: translateY(-50%)
+	height: 50px
+	width: 50px
+	border-radius: 50%
+	background: red
+	left: 10px
+	z-index: 5
+	font-size: 0
+	border: 0
+	display: flex
+	align-items: center
+	justify-content: center
+	background: #5D5F65
+	&:before
+		content: ''
+		position: absolute
+		width: 15px
+		height: 15px
+		border-left: 3px solid #fff
+		border-top: 3px solid #fff
+		transform: rotate(-45deg)
+.slick-next
+	left: auto
+	right: 10px
+	transform: rotate(180deg)
+.slick-dots
+	position: absolute
+	left: 50%
+	transform: translateX(-50%)
+	bottom: 20px
+	display: flex
+	list-style: none
+	button
+		color: #fff
+		background: #5D5F65
+		border: 1px solid #5D5F65
+		border-radius: 50%
+		padding: 1px 6px
+		margin: 1px
